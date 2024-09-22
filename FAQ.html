@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 80px;
+        }
+        .faq {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+           
+        }
+        .question {
+            font-weight: 800;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #a3c828;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        .question.active {
+            background-color: #96e39d;
+        }
+        .answer {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .question.active + .answer {
+            display: block;
+        }
+    </style>
+
+<body>
+    <h2>FAQ</h2>
+    <div class="faq">
+        <div class="question">What is JavaScript?</div>
+        <div class="answer">JavaScript is the world's most popular programming language.<br>
+               JavaScript is the programming language of the Web.<br>
+             JavaScript is easy to learn.<br>
+            This tutorial will teach you JavaScript from basic to advanced.</div>
+    </div>
+    <div class="faq">
+        <div class="question">JS Array Methods</div>
+        <div class="answer"> 1.ForEach(): Executes a provided function once for each array element.<br>
+           2.map(): Creates a new array with the results of calling a provided function on every element in the calling array.<br>
+           3.filter(): Creates a new array with all elements that pass the test implemented by the provided function.<br>
+           4.reduce(): Executes a reducer function on each element of the array, resulting in a single output value.<br>
+           5.some(): Tests whether at least one element in the array passes the test implemented by the provided function.</div>
+    </div>
+    <div class="faq">
+        <div class="question">DOM?</div>
+        <div class="answer">The HTML DOM can be accessed with JavaScript (and with other programming languages).<br>
+            In the DOM, all HTML elements are defined as objects.<br>
+            The programming interface is the properties and methods of each object.</div>
+    </div>
+    <div class="faq">
+        <div class="question">Eents?</div>
+        <div class="answer">An HTML event can be something the browser does, or something a user does.<br>
+            Here are some examples of HTML events:<br>
+            An HTML web page has finished loading<br>
+            An HTML input field was changed<br>
+            An HTML button was clicked</div>
+    </div>
+</body>
+<script>
+    let someQuestions=document.querySelectorAll('.question');
+    for(let question of someQuestions){
+        question.addEventListener('click',(event)=>{
+            event.target.classList.toggle('active')
+        })
+    }
+</script>
+</html>
